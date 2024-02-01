@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1706.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOA3-CinemaCasus", "SOA3-CinemaCasus\SOA3-CinemaCasus.csproj", "{60DC9690-75F4-44B5-AD32-D1B678EBF31F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOA3-CinemaCasus.Tests", "SOA3-CinemaCasus.Tests\SOA3-CinemaCasus.Tests.csproj", "{5BBBB80E-9646-4AC7-9632-5F3D3B0CC339}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{60DC9690-75F4-44B5-AD32-D1B678EBF31F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60DC9690-75F4-44B5-AD32-D1B678EBF31F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60DC9690-75F4-44B5-AD32-D1B678EBF31F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BBBB80E-9646-4AC7-9632-5F3D3B0CC339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BBBB80E-9646-4AC7-9632-5F3D3B0CC339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BBBB80E-9646-4AC7-9632-5F3D3B0CC339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BBBB80E-9646-4AC7-9632-5F3D3B0CC339}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
