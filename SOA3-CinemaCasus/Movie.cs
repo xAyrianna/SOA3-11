@@ -8,6 +8,7 @@ namespace SOA3_CinemaCasus
     public class Movie
     {
         private string Title;
+        private List<MovieScreening> MovieScreenings = new List<MovieScreening>();
 
         public Movie(string title)
         {
@@ -16,7 +17,7 @@ namespace SOA3_CinemaCasus
 
         public void AddScreening(MovieScreening screening)
         {
-            throw new NotImplementedException();
+            MovieScreenings.Add(screening);
         }
 
         public override string ToString()

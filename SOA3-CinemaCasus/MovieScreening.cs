@@ -9,6 +9,7 @@ namespace SOA3_CinemaCasus
     {
         private DateTime DateAndTime;
         private double PricePerSeat;
+        public Movie Movie { get; set; }
 
         public MovieScreening(DateTime DateAndTime, double PricePerSeat)
         {
@@ -21,6 +22,10 @@ namespace SOA3_CinemaCasus
             return PricePerSeat;
         }
 
+        public Boolean IsWeekend(){
+            return DateAndTime.DayOfWeek == DayOfWeek.Friday || DateAndTime.DayOfWeek == DayOfWeek.Saturday || DateAndTime.DayOfWeek == DayOfWeek.Sunday;
+        }
+        
         public override string ToString()
         {
             return "Moviescreening is at: " + DateAndTime;

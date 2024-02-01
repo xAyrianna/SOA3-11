@@ -10,12 +10,14 @@ namespace SOA3_CinemaCasus
         private int RowNr;
         private int SeatNr;
         private Boolean IsPremium; 
+        public MovieScreening Screening {get ; set;}
 
-        public MovieTicket(int RowNr, int SeatNr, Boolean IsPremium)
+        public MovieTicket(int RowNr, int SeatNr, Boolean IsPremium, MovieScreening Screening)
         {
             this.RowNr = RowNr;
             this.SeatNr = SeatNr;
             this.IsPremium = IsPremium;
+            this.Screening = Screening;
         }
 
         public Boolean IsPremiumTicket(){
@@ -23,12 +25,12 @@ namespace SOA3_CinemaCasus
         }
 
         public double GetPrice(){
-            throw new NotImplementedException();
+            return Screening.GetPricePerSeat();
         }
 
         public override string ToString()
         {
-            return "Ticket is at row: " + RowNr + " and seat: " + SeatNr;
+            return $"Row: {RowNr}, Seat: {SeatNr}, Premium: {IsPremium}";
         }
     }
 }
