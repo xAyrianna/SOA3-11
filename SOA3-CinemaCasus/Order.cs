@@ -10,7 +10,7 @@ namespace SOA3_CinemaCasus
     {
         private int OrderNr;
         private Boolean IsStudentOrder;
-        private List<MovieTicket> SeatReservations  = new List<MovieTicket>();
+        private List<MovieTicket> SeatReservations = new List<MovieTicket>();
 
         public Order(int orderNr, Boolean isStudentOrder)
         {
@@ -36,17 +36,17 @@ namespace SOA3_CinemaCasus
                 return 0;
             }
             Boolean IsWeekend = SeatReservations[0].Screening.IsWeekend();
-            Boolean IsSecondTicketfree = IsStudentOrder || !IsWeekend; 
+            Boolean IsSecondTicketfree = IsStudentOrder || !IsWeekend;
             double PremiumExtra = IsStudentOrder ? 2 : 3;
-            double Price = 0;   
+            double Price = 0;
 
-            for(int i = 1; i <= NumberOfTickets; i++)
+            for (int i = 1; i <= NumberOfTickets; i++)
             {
                 if (i % 2 == 0 && IsSecondTicketfree)
                 {
                     continue;
                 }
-                MovieTicket Ticket = SeatReservations[i-1];
+                MovieTicket Ticket = SeatReservations[i - 1];
                 Price += Ticket.GetPrice();
 
                 if (Ticket.IsPremiumTicket())
@@ -62,7 +62,8 @@ namespace SOA3_CinemaCasus
             return Price;
         }
 
-        public void Export(TicketExportFormat ExportFormat){
+        public void Export(TicketExportFormat ExportFormat)
+        {
             if (ExportFormat == TicketExportFormat.JSON)
             {
                 using (StreamWriter sw = new StreamWriter("Orders/Order" + OrderNr + ".json"))
@@ -70,7 +71,7 @@ namespace SOA3_CinemaCasus
                     sw.WriteLine("{");
                     sw.WriteLine("\t\"OrderNr\": " + OrderNr + ",");
                     sw.WriteLine("\t\"Tickets\": [");
-                    for(int i = 0; i < SeatReservations.Count(); i++)
+                    for (int i = 0; i < SeatReservations.Count(); i++)
                     {
                         MovieTicket Ticket = SeatReservations[i];
                         if (i == SeatReservations.Count() - 1)
@@ -84,7 +85,8 @@ namespace SOA3_CinemaCasus
                     sw.WriteLine("\t\"TotalPrice\": " + CalculatePrice());
                     sw.WriteLine("}");
                 }
-            } else if (ExportFormat == TicketExportFormat.PLAINTEXT)
+            }
+            else if (ExportFormat == TicketExportFormat.PLAINTEXT)
             {
                 using (StreamWriter sw = new StreamWriter("Orders/Order" + OrderNr + ".txt"))
                 {
@@ -95,12 +97,11 @@ namespace SOA3_CinemaCasus
                     }
                     sw.WriteLine("Total Price: " + CalculatePrice());
                 }
-            } else
+            }
+            else
             {
                 throw new Exception("Unsupported ExportFormat");
             }
-
-            
         }
     }
 }
