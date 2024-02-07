@@ -63,7 +63,6 @@ namespace SOA3_CinemaCasus
         }
 
         public void Export(TicketExportFormat ExportFormat){
-            string Extension = "";
             if (ExportFormat == TicketExportFormat.JSON)
             {
                 using (StreamWriter sw = new StreamWriter("Orders/Order" + OrderNr + ".json"))
