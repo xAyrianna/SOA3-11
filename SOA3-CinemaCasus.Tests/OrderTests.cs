@@ -190,11 +190,11 @@
         {
             // Arrange
             Order Order = new Order(1, false);
-            
+
             // Act
 
             // Assert
-            Assert.IsType(Order.State.GetType(), typeof(NoOrderState));
+            Assert.IsType<NoOrderState>(Order.State);
         }
 
         [Fact]
@@ -204,12 +204,12 @@
             Order Order = new Order(1, false);
             MovieScreening Screening = new(new DateTime(2024, 02, 02, 20, 00, 00), 10);
             MovieTicket Ticket = new(1, 1, false, Screening);
-            
+
             // Act
             Order.AddSeatReservation(Ticket);
-            
+
             // Assert
-            Assert.IsType(Order.State.GetType(), typeof(ReservedOrderState));
+            Assert.IsType<UnestablishedOrderState>(Order.State);
         }
 
 
