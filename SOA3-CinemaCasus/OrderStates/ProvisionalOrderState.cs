@@ -8,7 +8,7 @@ namespace SOA3_CinemaCasus
 {
     public class ProvisionalOrderState : IOrderState
     {
-        private Order Order;
+        private readonly Order Order;
 
         public ProvisionalOrderState(Order Order)
         {

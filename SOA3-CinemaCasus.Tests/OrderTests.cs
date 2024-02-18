@@ -3,7 +3,7 @@
 
     public class OrderTests
     {
-
+        private Movie Movie = new("Title");
         [Fact]
         public void CalculatePrice_With_No_Tickets()
         {
@@ -22,7 +22,7 @@
         {
             // Arange
             Order order = new(1, true);
-            MovieScreening screening = new(new DateTime(2024, 02, 02, 20, 00, 00), 8.5);
+            MovieScreening screening = new(new DateTime(2024, 02, 02, 20, 00, 00), 8.5, this.Movie);
             MovieTicket ticket = new(1, 1, false, screening);
             order.AddSeatReservation(ticket);
             MovieTicket ticket2 = new(1, 2, false, screening);
@@ -40,7 +40,7 @@
         {
             // Arange
             Order order = new(1, false);
-            MovieScreening screening = new(new DateTime(2024, 02, 03, 20, 00, 00), 8.5);
+            MovieScreening screening = new(new DateTime(2024, 02, 03, 20, 00, 00), 8.5, this.Movie);
             MovieTicket ticket = new(1, 1, false, screening);
             order.AddSeatReservation(ticket);
             MovieTicket ticket2 = new(1, 2, false, screening);
@@ -58,7 +58,7 @@
         {
             // Arange
             Order order = new(1, false);
-            MovieScreening screening = new(new DateTime(2024, 02, 01, 20, 00, 00), 8.5);
+            MovieScreening screening = new(new DateTime(2024, 02, 01, 20, 00, 00), 8.5, this.Movie);
             MovieTicket ticket = new(1, 1, false, screening);
             order.AddSeatReservation(ticket);
             MovieTicket ticket2 = new(1, 2, false, screening);
@@ -76,7 +76,7 @@
         {
             // Arange
             Order order = new(1, false);
-            MovieScreening screening = new(new DateTime(2024, 02, 03, 20, 00, 00), 8.5);
+            MovieScreening screening = new(new DateTime(2024, 02, 03, 20, 00, 00), 8.5, this.Movie);
             MovieTicket ticket = new(1, 1, true, screening);
             order.AddSeatReservation(ticket);
             MovieTicket ticket2 = new(1, 2, true, screening);
@@ -94,7 +94,7 @@
         {
             // Arange
             Order order = new(1, true);
-            MovieScreening screening = new(new DateTime(2024, 02, 01, 20, 00, 00), 8.5);
+            MovieScreening screening = new(new DateTime(2024, 02, 01, 20, 00, 00), 8.5, this.Movie);
             MovieTicket ticket = new(1, 1, true, screening);
             order.AddSeatReservation(ticket);
             MovieTicket ticket2 = new(1, 2, true, screening);
@@ -112,7 +112,7 @@
         {
             // Arange
             Order order = new(1, false);
-            MovieScreening screening = new(new DateTime(2024, 02, 02, 20, 00, 00), 8.5);
+            MovieScreening screening = new(new DateTime(2024, 02, 02, 20, 00, 00), 8.5, this.Movie);
             MovieTicket ticket = new(1, 1, true, screening);
             order.AddSeatReservation(ticket);
             MovieTicket ticket2 = new(1, 2, true, screening);
@@ -138,7 +138,7 @@
         {
             // Arange
             Order order = new(1, true);
-            MovieScreening screening = new(new DateTime(2024, 02, 02, 20, 00, 00), 8.5);
+            MovieScreening screening = new(new DateTime(2024, 02, 02, 20, 00, 00), 8.5, this.Movie);
             MovieTicket ticket = new(1, 1, true, screening);
             order.AddSeatReservation(ticket);
             MovieTicket ticket2 = new(1, 2, true, screening);
@@ -164,7 +164,7 @@
         {
             // Arange
             Order order = new(1, true);
-            MovieScreening screening = new(new DateTime(2024, 02, 02, 20, 00, 00), 8.5);
+            MovieScreening screening = new(new DateTime(2024, 02, 02, 20, 00, 00), 8.5, this.Movie);
             MovieTicket ticket = new(1, 1, true, screening);
             order.AddSeatReservation(ticket);
             MovieTicket ticket2 = new(1, 2, true, screening);
@@ -202,7 +202,7 @@
         {
             // Arrange
             Order Order = new Order(1, false);
-            MovieScreening Screening = new(new DateTime(2024, 02, 02, 20, 00, 00), 10);
+            MovieScreening Screening = new(new DateTime(2024, 02, 02, 20, 00, 00), 10, this.Movie);
             MovieTicket Ticket = new(1, 1, false, Screening);
 
             // Act

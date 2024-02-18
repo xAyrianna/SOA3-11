@@ -11,10 +11,11 @@ namespace SOA3_CinemaCasus
         private double PricePerSeat;
         public Movie Movie { get; set; }
 
-        public MovieScreening(DateTime DateAndTime, double PricePerSeat)
+        public MovieScreening(DateTime DateAndTime, double PricePerSeat, Movie Movie)
         {
             this.DateAndTime = DateAndTime;
             this.PricePerSeat = PricePerSeat;
+            this.Movie = Movie;
         }
 
         public double GetPricePerSeat()

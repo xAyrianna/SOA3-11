@@ -2,7 +2,7 @@
 {
     public class CompletedOrderState : IOrderState
     {
-        private Order Order;
+        private readonly Order Order;
 
         public CompletedOrderState(Order Order)
         {
