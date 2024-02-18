@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOA3_CinemaCasus
 {
-    public class UnestablishedOrderState : OrderState
+    public class UnestablishedOrderState : IOrderState
     {
         private Order Order;
 
@@ -44,7 +44,7 @@ namespace SOA3_CinemaCasus
 
         public void SendNotice()
         {
-            Console.WriteLine("Reserve the tickets first...");   
+            Console.WriteLine("Reserve the tickets first...");
         }
     }
 }

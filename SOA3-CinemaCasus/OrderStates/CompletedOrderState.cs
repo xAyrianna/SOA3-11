@@ -1,6 +1,6 @@
 ﻿namespace SOA3_CinemaCasus
 {
-    public class CompletedOrderState : OrderState
+    public class CompletedOrderState : IOrderState
     {
         private Order Order;
 

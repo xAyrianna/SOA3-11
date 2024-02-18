@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOA3_CinemaCasus
 {
-    public class NoOrderState : OrderState
+    public class NoOrderState : IOrderState
     {
         private Order Order;
 
@@ -44,6 +44,6 @@ namespace SOA3_CinemaCasus
         public void SendNotice()
         {
             Console.WriteLine("What notice?..");
-        }       
+        }
     }
 }

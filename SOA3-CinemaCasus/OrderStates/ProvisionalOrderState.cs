@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOA3_CinemaCasus
 {
-    public class ProvisionalOrderState : OrderState
+    public class ProvisionalOrderState : IOrderState
     {
         private Order Order;
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOA3_CinemaCasus
 {
-    public interface OrderState
+    public interface IOrderState
     {
         public void CreateOrder();
         public void SubmitOrder();
