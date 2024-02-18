@@ -11,11 +11,13 @@ namespace SOA3_CinemaCasus
         private int OrderNr;
         private Boolean IsStudentOrder;
         private List<MovieTicket> SeatReservations = new List<MovieTicket>();
+        public OrderState State { get; set; }
 
         public Order(int orderNr, Boolean isStudentOrder)
         {
             OrderNr = orderNr;
             IsStudentOrder = isStudentOrder;
+            State = new NoOrderState(this);
         }
 
         public int GetOrderNr()
@@ -26,6 +28,7 @@ namespace SOA3_CinemaCasus
         public void AddSeatReservation(MovieTicket Ticket)
         {
             SeatReservations.Add(Ticket);
+            State.CreateOrder();
         }
 
         public double CalculatePrice()
